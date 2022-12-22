@@ -10,5 +10,4 @@ Things that I could have done better:
 2. Write easier to read code
 3. Simplify some of the functions
 
-Live version of the project is here: 
-<a id="https://igor693.github.io/Rock-Paper-Scissors-Game/">The Link</a>
+Live version of the project is here: [https://igor693.github.io/Rock-Paper-Scissors-Game/]()
