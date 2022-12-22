@@ -11,4 +11,4 @@ Things that I could have done better:
 3. Simplify some of the functions
 
 Live version of the project is here: 
-<a id="The Link">https://igor693.github.io/Rock-Paper-Scissors-Game/</a>
+<a id="https://igor693.github.io/Rock-Paper-Scissors-Game/">The Link</a>
