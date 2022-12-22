@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <title>Rock, Paper, Scissors</title>
+</head>
+<body>
+  <header class="fade-in-1">
+    <h1>Let's play Rock Paper Scissors!</h1>
+  </header>
+    <h2 class="fade-in-2">First to 5 Wins! Good luck!</h2>
+  
+    <p class ="fade-in-2">Choose your move:</p>
+
+    <button id="rock-button" class="fade-in" onclick="play(playerMove='rock')"><span class="material-icons md-light">rocket</span></button>    
+    
+    <button id="paper-button" class="fade-in" onclick="play(playerMove='paper')"><span class="material-icons md-light">description</span></button>
+    
+    <button id="scissors-button" class="fade-in" onclick="play(playerMove='scissors')"><span class="material-icons md-light">content_cut</span></button>
+    
+    <p id="result" class="fade-in"></p>
+    <button id="restart-button" class="choices" style="display: none" onclick="restart()">Restart</button>
+    
+    <script>
+      
+    let playerScore = 0;
+    let computerScore = 0;
+    let draw = 0;
+    let round = 1;
+    
+    function play(playerMove) {
+    // Generate the computer's move
+     
+  let computerMove = Math.random();
+  computerMove = computerMove < 0.45 ? 'rock' : (computerMove < 0.9 ? 'paper' : 'scissors');
+    
+    // Determine the winner
+  let result;
+    if (playerMove === 'rock') {
+      result = computerMove === 'paper' ? 'You lose!' : 'You win!';
+      } else if (playerMove === 'paper') {
+        result = computerMove === 'scissors' ? 'You lose!' : 'You win!';
+      } else if (playerMove === 'scissors') {
+        result = computerMove === 'rock' ? 'You lose!' : 'You win!';
+      } else if (playerMove === computerMove) {
+        result = "It's a draw!";
+      }
+    
+      // Update the scores
+    
+      if (result === "You win!") {
+        playerScore++;
+      } else if (result === "You lose!") {
+        computerScore++;
+      } else if (result === "It's a draw!") {
+        draw++;
+      }
+
+       // Add a red or green glow to the button
+const buttonId = `${playerMove}-button`;
+const buttonElement = document.getElementById(buttonId);
+if (result === "You win!") {
+  buttonElement.classList.add("green-glow");
+} else if (result === "You lose!") {
+  buttonElement.classList.add("red-glow");
+} else if (result === "It's a draw!") {
+  buttonElement.classList.add("gray-glow");
+}
+
+  // Remove the red or green glow after 500 milliseconds
+setTimeout(function() {
+  buttonElement.classList.remove('red-glow');
+  buttonElement.classList.remove('green-glow');
+  buttonElement.classList.remove('gray-glow');
+  }, 500);
+    
+  // Check if the game is over
+let gameOver = false;
+let winner;
+if (playerScore === 5) {
+  gameOver = true;
+  winner = 'player';
+} else if (computerScore === 5) {
+  gameOver = true;
+  winner = 'computer';
+} else {
+  gameOver = false;
+  winner = null;
+}
+    
+  // Display the result
+const resultElement = document.getElementById('result');
+  if (winner !== null) {
+  resultElement.innerHTML = `Game over! The ${winner} wins!`;
+  document.getElementById('restart-button').style.display = 'block';
+  disableButtons();
+  } else {
+  resultElement.innerHTML = `You chose ${playerMove}, the computer chose ${computerMove}. ${result} <br>
+                                   Player: ${playerScore} Computer: ${computerScore} Draw: ${draw}`;
+  }
+}
+
+function restart() {
+  playerScore = 0;
+  computerScore = 0;
+  draw = 0;
+  document.getElementById('result').innerHTML = '';
+  document.getElementById('restart-button').style.display = 'none';
+  enableButtons();
+}    
+
+function disableButtons() {
+  document.getElementById('rock-button').disabled = true;
+  document.getElementById('paper-button').disabled = true;
+  document.getElementById('scissors-button').disabled = true;
+}
+
+function enableButtons() {
+  document.getElementById('rock-button').disabled = false;
+  document.getElementById('paper-button').disabled = false;
+  document.getElementById('scissors-button').disabled = false;
+}
+</script>
+</body>
+</html>

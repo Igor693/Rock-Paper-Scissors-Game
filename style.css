@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Asap:wght@100;200&family=Rubik+Bubbles&family=Rubik+Distressed&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    
+}
+
+body {
+    background-color: black;
+
+}
+h2 {
+    text-align: center;
+    padding: 20px;
+    font-size: 40px;
+    font-family: Asap, sans-serif;
+    font-weight: bold;
+}
+h2, p {
+    color: white;
+    font-family: Asap, sans-serif;
+}
+
+h1 {
+    color: black;
+    font-family: 'Rubik Bubbles', cursive;
+}
+
+p {
+    border: 4px solid white; 
+    width: 300px;
+    margin: 40px auto;
+    color: white;
+    font-size: 30px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px 25px;
+    font-family: Asap, sans-serif;
+    position: relative;
+}
+
+#results { 
+    position: absolute;
+    top: 550px;
+    left: 500px;
+    font-weight: bold;
+    text-align:center;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Asap, sans-serif;
+}
+
+
+button {
+    
+    display:inline-block;
+    position: relative;
+    left: 37%;
+    border-radius: 60%;
+    border: 4px solid snow;
+    padding: 20px;
+    margin: 0 20px;
+    transition: 0.4s ease;
+    color: white;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #24272E;
+}
+
+#restart-button {
+
+    position: absolute;
+    top: 570px;
+    left: 525px;
+    border: 4px solid white; 
+    width: 300px;
+    margin: 40px auto;
+    color: white;
+    font-size: 30px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px 25px;
+    font-family: Asap, sans-serif;
+ 
+     
+}
+
+
+.green-glow {
+
+    border: 4px solid #4dcc7d;
+    box-shadow: 0 0 10px #31b43a;
+}
+
+.red-glow {
+
+    border: 4px solid #fc121b;
+    box-shadow: 0 0 10px #d01115;
+
+}
+
+.gray-glow {
+    border: 4px solid #464647;
+    box-shadow: 0 0 10px #25292b;
+}
+
+.fade-in-1 {
+    opacity: 0;  /* make the element initially transparent */
+    animation: fadein 2s;  /* animate the element over 2 seconds */
+    animation-fill-mode: forwards;  /* keep the final state of the animation */
+  }
+  
+  .fade-in-2 {
+    opacity: 0;  /* make the element initially transparent */
+    animation: fadein 2s;  /* animate the element over 2 seconds */
+    animation-delay: 2s;  /* delay the start of the animation by 2 seconds */
+    animation-fill-mode: forwards;  /* keep the final state of the animation */
+  }
+  
+  @keyframes fadein {
+    from { opacity: 0; }  /* start with 0% opacity */
+    to { opacity: 1; }  /* end with 100% opacity */
+  }
+ 
+.fade-in {
+    opacity: 0;  /* make the element initially transparent */
+    animation: fadein 2s;  /* animate the element over 2 seconds */
+    animation-delay: 4s;  /* delay the start of the animation by 2 seconds */
+    animation-fill-mode: forwards;  /* keep the final state of the animation */
+  }
+
+  
+  
+  
+  
+  
+ 
